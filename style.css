@@ -291,7 +291,7 @@ nav a {
   }
 
   nav {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
   }
 
@@ -363,7 +363,7 @@ nav a {
   }
 
   nav {
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
   }
 
