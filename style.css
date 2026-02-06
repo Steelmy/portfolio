@@ -292,7 +292,19 @@ nav a {
 
   nav {
     flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
     gap: 8px;
+    padding-bottom: 5px; /* Add space for scrollbar or touch area */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    /* Hide scrollbar for Chrome/Safari/Opera */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
   }
 
   .présentation,
@@ -364,7 +376,18 @@ nav a {
 
   nav {
     flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
     gap: 5px;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
   }
 
   .présentation,
