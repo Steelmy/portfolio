@@ -1,142 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
-<head>
-    <meta charset="utf-8" >
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil - Ory-Migeon Liam</title>
-    <link href="style.css" rel="stylesheet" >
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
-</head>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <header>
-		<nav>
-			<img class="logo" src="img/Liam_Ory-Migeon_logo.png" alt="Logo Ory-Migeon Liam" >
-			<div>
-				<a href="#présentation">Présentation</a>
-				<a href="#a-propos">À propos de moi</a>
-				<a href="#compétences">Mes compétences</a>
-				<a href="#CV">Mon CV</a>
-			</div>
-		</nav>
-    </header>
-	<main class="container">
-		<section id="présentation" class="présentation">
-			<div class = "text">
-				<div class="paq1">
-					<h1>Liam Ory-Migeon</h1>
-					<br>
-					<p>
-						Étudiant en BTS Cybersécurité, Informatique et réseaux, ELectronique <br> en recherche d'alternance dans le secteur de l'informatique autour de Tours. <br> Je cherche notamment dans le domaine du développement web pour Septembre 2026.
-					</p>
-					<br>
-				</div>
-				<a class = "btnmail" target="_blank" href="mailto:liamorymigeon@gmail.com" >
-					<button class="btn">CONTACTEZ-MOI</button>
-				</a>
-			</div>
-			<img src="img/photo.jpg" alt="Photo de moi" >
-		</section>
-		<section id="a-propos" class="a-propos">
-			<div class="carre-contenu">
-				<h1>À propos de moi</h1><br>
-				<p>
-					Je suis quelqu'un de curieux et j'aime comprendre comment les choses fonctionnent et pourquoi sont-elles ainsi. Ce qui entre autres explique ma passion pour l'informatique.<br><br>
-					Je suis motivé et pleinement investi dans les domaines que j'aime, que ce soit dans le sport ou dans le développement.<br><br>
-					J'aime apprendre, peu importe le domaine et mon niveau de compétence dans celui-ci.
-				</p>
-			</div>
-		</section>
-		<section id="compétences" class="compétences">
-			<div class="carre-contenu">
-				<h1>Mes compétences</h1><br>
-				<ul>
-					<li>Notions de Cybersécurité</li><br>
-					<li>Développement en HTML/CSS et JavaScript</li><br>
-					<li>Dépannage et résolution de problèmes informatiques</li><br>
-					<li>Configuration de réseaux/switchs et routeurs</li><br>
-				</ul>
-			</div>
-		</section>
-		<section id="CV" class="CV">
-			<div class="carre-contenu">
-				<h1>Voici mon CV :</h1>
-				<p>(cliquer pour afficher en plus grand)</p><br>
-				<a href="CV_Liam_Ory-Migeon.pdf" class="allphoto">
-					<img src="CV_Liam_Ory-Migeon.png" alt="Mon CV" >
-					<div class="photo-text">Aggrandir l'image</div>
-				</a>
-				<a href="CV_Liam_Ory-Migeon.pdf" download>
-					<button class="Btn">
-						<svg
-							class="svgIcon"
-							viewBox="0 0 384 512"
-							height="1em"
-						>
-							<path
-								d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-							></path>
-						</svg>
-						<span class="icon2"></span>
-					</button>
-				</a>
-			</div>
-		</section>
-	</main>
+  <body>
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar">
+      <!-- Brand -->
+      <a href="#présentation" class="nav-brand">
+        <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
+          <path
+            clip-rule="evenodd"
+            d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+          />
+        </svg>
+        <span>Liam O-M</span>
+      </a>
+
+      <!-- Nav links (desktop) -->
+      <div class="nav-links">
+        <a href="#présentation" class="nav-link" data-section="présentation"
+          >Présentation</a
+        >
+        <a href="#a-propos" class="nav-link" data-section="a-propos"
+          >À propos</a
+        >
+        <a href="#compétences" class="nav-link" data-section="compétences"
+          >Compétences</a
+        >
+        <a href="#CV" class="nav-link" data-section="CV">CV</a>
+
+        <!-- Dropdown "Mes Projets" -->
+        <div id="dropdown-container">
+          <button id="dropdown-trigger">
+            Mes Projets
+            <svg
+              id="chevron-icon"
+              fill="none"
+              height="16"
+              width="16"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m19.92 8.95-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="1.5"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown menu -->
+          <div id="dropdown-menu">
+            <div class="dropdown-inner">
+              <a href="#" class="dropdown-item">
+                <span class="dropdown-icon">
+                  <svg
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.32 10H4.69c-1.48 0-2.68-1.21-2.68-2.68V4.69c0-1.48 1.21-2.68 2.68-2.68h14.63C20.8 2.01 22 3.22 22 4.69v2.63C22 8.79 20.79 10 19.32 10ZM19.32 22H4.69c-1.48 0-2.68-1.21-2.68-2.68v-2.63c0-1.48 1.21-2.68 2.68-2.68h14.63c1.48 0 2.68 1.21 2.68 2.68v2.63c0 1.47-1.21 2.68-2.68 2.68ZM6 5v2M10 5v2M6 17v2M10 17v2M14 6h4M14 18h4"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <div class="dropdown-item-title">SyncDrive</div>
+                  <div class="dropdown-item-desc">
+                    Application de synchronisation
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="dropdown-item">
+                <span class="dropdown-icon">
+                  <svg
+                    fill="none"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.09 13.28h3.09v7.2c0 1.68.91 2.02 2.02.76l7.57-8.6c.93-1.05.54-1.92-.87-1.92h-3.09v-7.2c0-1.68-.91-2.02-2.02-.76l-7.57 8.6c-.92 1.06-.53 1.92.87 1.92Z"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <div class="dropdown-item-title">
+                    Projet de fin d'année BTS
+                  </div>
+                  <div class="dropdown-item-desc">
+                    Projet scolaire de fin de cursus
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="mobile-menu-btn">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu">
+      <a
+        href="#présentation"
+        class="mobile-nav-link nav-link"
+        data-section="présentation"
+        >Présentation</a
+      >
+      <a
+        href="#a-propos"
+        class="mobile-nav-link nav-link"
+        data-section="a-propos"
+        >À propos</a
+      >
+      <a
+        href="#compétences"
+        class="mobile-nav-link nav-link"
+        data-section="compétences"
+        >Compétences</a
+      >
+      <a href="#CV" class="mobile-nav-link nav-link" data-section="CV">CV</a>
+      <div class="mobile-divider"></div>
+      <span class="mobile-section-title">Mes Projets</span>
+      <a href="#" class="mobile-nav-link">SyncDrive</a>
+      <a href="#" class="mobile-nav-link">Projet de fin d'année BTS</a>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+      <section id="présentation" class="présentation">
+        <div class="présentation-content">
+          <div class="présentation-text">
+            <h1>Liam Ory-Migeon</h1>
+            <br />
+            <p>
+              Étudiant en BTS Cybersécurité, Informatique et réseaux,
+              ELectronique <br />
+              en recherche d'alternance dans le secteur de l'informatique autour
+              de Tours. <br />
+              Je cherche notamment dans le domaine du développement web pour
+              Septembre 2026.
+            </p>
+            <br />
+            <a
+              class="btnmail"
+              target="_blank"
+              href="mailto:liamorymigeon@gmail.com"
+            >
+              <button class="btn">CONTACTEZ-MOI</button>
+            </a>
+          </div>
+          <img
+            src="img/photo.jpg"
+            alt="Photo de moi"
+            class="présentation-photo"
+          />
+        </div>
+      </section>
+
+      <section id="a-propos">
+        <div class="carre-contenu">
+          <h1>À propos de moi</h1>
+          <br />
+          <p>
+            Je suis quelqu'un de curieux et j'aime comprendre comment les choses
+            fonctionnent et pourquoi sont-elles ainsi. Ce qui entre autres
+            explique ma passion pour l'informatique.<br /><br />
+            Je suis motivé et pleinement investi dans les domaines que j'aime,
+            que ce soit dans le sport ou dans le développement.<br /><br />
+            J'aime apprendre, peu importe le domaine et mon niveau de compétence
+            dans celui-ci.
+          </p>
+        </div>
+      </section>
+
+      <section id="compétences">
+        <div class="carre-contenu">
+          <h1>Mes compétences</h1>
+          <br />
+          <ul>
+            <li>Notions de Cybersécurité</li>
+            <li>Développement en HTML/CSS et JavaScript</li>
+            <li>Dépannage et résolution de problèmes informatiques</li>
+            <li>Configuration de réseaux/switchs et routeurs</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="CV" class="CV">
+        <div class="carre-contenu">
+          <h1>Voici mon CV :</h1>
+          <p class="subtitle">(cliquer pour afficher en plus grand)</p>
+          <br />
+          <a href="CV_Liam_Ory-Migeon.pdf" class="allphoto">
+            <img src="CV_Liam_Ory-Migeon.png" alt="Mon CV" />
+            <div class="photo-text">Aggrandir l'image</div>
+          </a>
+          <a href="CV_Liam_Ory-Migeon.pdf" download>
+            <button class="Btn">
+              <svg class="svgIcon" viewBox="0 0 384 512" height="1em">
+                <path
+                  d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                ></path>
+              </svg>
+              <span class="icon2"></span>
+              <span class="tooltip">Télécharger</span>
+            </button>
+          </a>
+        </div>
+      </section>
+    </main>
+
     <footer>
-		<div class="p">
-        	<p>© <span id="year"></span> Liam Ory-Migeon</p>
-			<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-		</div>
-		<div class="reseaux">
-			<a class="icone" target="_blank" href="tel:+771848932">
-				<img src="img/phone.png" alt="Logo Téléphone" >
-			</a>
-			<a class="icone" target="_blank" href="mailto:liamorymigeon@gmail.com">
-				<img src="img/mail.png" alt="Logo Mail" >
-			</a>
-			<a class="icone" target="_blank" href="https://www.linkedin.com/in/liam-ory-migeon">
-				<img src="img/logo-linkedin-pour-cv.webp" alt="Logo Linkedin" >
-			</a>
-		</div>
+      <div class="footer-center">
+        <p>© <span id="year"></span> Liam Ory-Migeon</p>
+        <script>
+          document.getElementById("year").textContent =
+            new Date().getFullYear();
+        </script>
+      </div>
+      <div class="reseaux">
+        <a class="icone" target="_blank" href="tel:+771848932">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            ></path>
+          </svg>
+        </a>
+        <a class="icone" target="_blank" href="mailto:liamorymigeon@gmail.com">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+        <a
+          class="icone"
+          target="_blank"
+          href="https://www.linkedin.com/in/liam-ory-migeon"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
     </footer>
-	<script>
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                // Custom smooth scroll implementation that works on all platforms
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const startPosition = window.pageYOffset;
-                const distance = targetPosition - startPosition;
-                const duration = 1000; // Duration in milliseconds
-                let start = null;
-                
-                function animation(currentTime) {
-                    if (start === null) start = currentTime;
-                    const timeElapsed = currentTime - start;
-                    const run = ease(timeElapsed, startPosition, distance, duration);
-                    window.scrollTo(0, run);
-                    if (timeElapsed < duration) requestAnimationFrame(animation);
-                }
-                
-                // Easing function for smooth animation
-                function ease(t, b, c, d) {
-                    t /= d / 2;
-                    if (t < 1) return c / 2 * t * t + b;
-                    t--;
-                    return -c / 2 * (t * (t - 2) - 1) + b;
-                }
-                
-                requestAnimationFrame(animation);
-            });
-        });
-    </script>
-</body>
 
+    <script src="script.js"></script>
+  </body>
 </html>
