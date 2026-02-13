@@ -11,9 +11,108 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .project-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      .project-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .project-header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #8b5cf6, #f441a5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .project-intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+        align-items: center;
+      }
+      .project-description h2 {
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+      .bolt-badge {
+        display: inline-block;
+        background: rgba(139, 92, 246, 0.1);
+        color: var(--accent);
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(139, 92, 246, 0.2);
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+      .feature-card {
+        background: var(--dark-card);
+        padding: 2rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(139, 92, 246, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+      }
+      .feature-card h3 {
+        color: var(--text);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+      .feature-card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+      .screenshot-placeholder {
+        aspect-ratio: 16/9;
+        background: var(--dark-surface);
+        border: 2px dashed var(--accent-border);
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+      .cta-section {
+        text-align: center;
+        padding: 4rem 0;
+        background: var(--dark-card);
+        border-radius: 2rem;
+        margin-top: 4rem;
+      }
+      @media (max-width: 768px) {
+        .project-intro {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div style="padding: 2rem">
+    <div style="padding: 2rem; width: 1000vh">
       <a
         href="../index.html"
         class="btn"
@@ -24,16 +123,151 @@
           gap: 0.5rem;
           font-size: 0.9em;
           padding: 0.5rem 1rem;
+          margin-bottom: 2rem;
         "
       >
         ← Retour
       </a>
-      <header style="margin-top: 2rem">
-        <h1>SyncDrive</h1>
-      </header>
-      <main>
-        <p>Page en construction...</p>
-      </main>
+
+      <div class="project-container">
+        <header class="project-header">
+          <div class="bolt-badge">✨ Premier Projet avec Bolt.new</div>
+          <h1>SyncDrive</h1>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 1.2rem;
+              max-width: 600px;
+              margin: 0 auto;
+            "
+          >
+            Une application de cloud personnel moderne et sécurisée.
+          </p>
+        </header>
+
+        <section class="project-intro">
+          <div class="project-description">
+            <h2>L'Histoire du Projet</h2>
+            <p
+              style="
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+                color: var(--text-muted);
+              "
+            >
+              SyncDrive marque le début de mon aventure dans le développement
+              assisté par l'IA. C'est mon tout premier projet réalisé en
+              collaboration avec <strong>Bolt.new</strong>.
+            </p>
+            <p style="line-height: 1.6; color: var(--text-muted)">
+              <strong>Qu'est-ce que Bolt ?</strong><br />
+              Bolt est un agent de développement web IA avancé qui permet de
+              créer, éditer et déployer des applications full-stack directement
+              dans le navigateur. Il m'a permis de transformer rapidement mes
+              idées en une application fonctionnelle, en gérant la complexité
+              technique tout en me laissant le contrôle sur la logique métier et
+              le design.
+            </p>
+          </div>
+          <div class="carre-contenu" style="padding: 2rem; border-radius: 1rem">
+            <h3 style="color: var(--accent); margin-bottom: 1rem">
+              Technologies Utilisées
+            </h3>
+            <ul style="color: var(--text-muted)">
+              <li>React & Vite pour le frontend</li>
+              <li>Node.js pour le backend</li>
+              <li>Base de données SQL</li>
+              <li>Design responsive moderne</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2
+            style="
+              text-align: center;
+              margin-bottom: 3rem;
+              font-size: 2.5rem;
+              padding-right: 25px;
+            "
+          >
+            Fonctionnalités Clés
+          </h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3>📂 Gestion de Fichiers</h3>
+              <p>
+                Upload, organisation et gestion intuitive de vos documents,
+                images et médias dans le cloud.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>🔒 Sécurité Avancée</h3>
+              <p>
+                Système d'authentification robuste et protection des données
+                pour garantir la confidentialité.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>🔄 Synchronisation</h3>
+              <p>
+                Accès instantané à vos fichiers depuis n'importe quel appareil,
+                à tout moment.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>🎨 Interface Moderne</h3>
+              <p>
+                Une expérience utilisateur fluide et agréable, conçue avec soin
+                pour une prise en main immédiate.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2
+            style="
+              text-align: center;
+              margin-bottom: 3rem;
+              font-size: 2.5rem;
+              padding-right: 25px;
+            "
+          >
+            Aperçu de l'Application
+          </h2>
+          <div class="gallery-grid">
+            <!-- Remplacer les src par vos vrais screenshots -->
+            <div class="screenshot-placeholder">
+              <span>Capture d'écran 1 : Tableau de bord</span>
+            </div>
+            <div class="screenshot-placeholder">
+              <span>Capture d'écran 2 : Gestionnaire de fichiers</span>
+            </div>
+            <div class="screenshot-placeholder">
+              <span>Capture d'écran 3 : Interface de partage</span>
+            </div>
+            <div class="screenshot-placeholder">
+              <span>Capture d'écran 4 : Paramètres</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="cta-section">
+          <h2 style="margin-bottom: 1.5rem">Prêt à essayer ?</h2>
+          <p style="color: var(--text-muted); margin-bottom: 2rem">
+            Découvrez le code source et testez l'application par vous-même.
+          </p>
+          <a
+            href="https://github.com/Steelmy/SyncDrive"
+            target="_blank"
+            class="btn"
+            style="text-decoration: none; font-size: 1.2rem; padding: 1rem 3rem"
+          >
+            <span style="margin-right: 10px">⚡</span> Tester sur GitHub
+          </a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
