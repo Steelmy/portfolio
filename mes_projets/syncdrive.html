@@ -11,108 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      .project-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-      }
-      .project-header {
-        text-align: center;
-        margin-bottom: 4rem;
-      }
-      .project-header h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-        background: linear-gradient(90deg, #8b5cf6, #f441a5);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .project-intro {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        margin-bottom: 4rem;
-        align-items: center;
-      }
-      .project-description h2 {
-        color: var(--accent);
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-      }
-      .bolt-badge {
-        display: inline-block;
-        background: rgba(139, 92, 246, 0.1);
-        color: var(--accent);
-        padding: 0.5rem 1rem;
-        border-radius: 2rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        border: 1px solid rgba(139, 92, 246, 0.2);
-      }
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-bottom: 4rem;
-      }
-      .feature-card {
-        background: var(--dark-card);
-        padding: 2rem;
-        border-radius: 1rem;
-        border: 1px solid rgba(139, 92, 246, 0.1);
-        transition: transform 0.3s ease;
-      }
-      .feature-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--accent);
-      }
-      .feature-card h3 {
-        color: var(--text);
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
-      }
-      .feature-card p {
-        color: var(--text-muted);
-        line-height: 1.6;
-      }
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        margin-bottom: 4rem;
-      }
-      .screenshot-placeholder {
-        aspect-ratio: 16/9;
-        background: var(--dark-surface);
-        border: 2px dashed var(--accent-border);
-        border-radius: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-muted);
-        font-weight: 500;
-      }
-      .cta-section {
-        text-align: center;
-        padding: 4rem 0;
-        background: var(--dark-card);
-        border-radius: 2rem;
-        margin-top: 4rem;
-      }
-      @media (max-width: 768px) {
-        .project-intro {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-        .gallery-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
   </head>
   <body>
-    <div style="padding: 2rem; width: 1000vh">
+    <div class="main-wrapper">
       <a
         href="../index.html"
         class="btn"
@@ -137,11 +38,15 @@
             style="
               color: var(--text-muted);
               font-size: 1.2rem;
-              max-width: 600px;
+              max-width: 900px;
               margin: 0 auto;
             "
           >
-            Une application de cloud personnel moderne et sécurisée.
+            SyncDrive est une application de cloud personnel propulsé par
+            Electron. Elle permet de stocker et de partager des fichiers via
+            Google Drive de manière accessible depuis n'importe où. Le but était
+            de pouvoir récupérer son travail ou une sauvegarde de jeu facilement
+            entre plusieurs ordinateurs et ce même d'OS différents.
           </p>
         </header>
 
@@ -156,8 +61,8 @@
               "
             >
               SyncDrive marque le début de mon aventure dans le développement
-              assisté par l'IA. C'est mon tout premier projet réalisé en
-              collaboration avec <strong>Bolt.new</strong>.
+              assisté par l'IA. C'est mon tout premier projet réalisé à l'aide
+              de l'IA (<strong>Bolt.new</strong> en l'occurence).
             </p>
             <p style="line-height: 1.6; color: var(--text-muted)">
               <strong>Qu'est-ce que Bolt ?</strong><br />
@@ -237,26 +142,38 @@
             Aperçu de l'Application
           </h2>
           <div class="gallery-grid">
-            <!-- Remplacer les src par vos vrais screenshots -->
             <div class="screenshot-placeholder">
-              <span>Capture d'écran 1 : Tableau de bord</span>
+              <img
+                src="../img/Screen-syncdrive/Tableau de bord.png"
+                alt="Tableau de bord"
+              />
             </div>
             <div class="screenshot-placeholder">
-              <span>Capture d'écran 2 : Gestionnaire de fichiers</span>
+              <img
+                src="../img/Screen-syncdrive/Interface-Download.png"
+                alt="Interface de téléchargement"
+              />
             </div>
             <div class="screenshot-placeholder">
-              <span>Capture d'écran 3 : Interface de partage</span>
+              <img
+                src="../img/Screen-syncdrive/Settings-sync.png"
+                alt="Paramètres de synchronisation"
+              />
             </div>
             <div class="screenshot-placeholder">
-              <span>Capture d'écran 4 : Paramètres</span>
+              <img
+                src="../img/Screen-syncdrive/Settings-download.png"
+                alt="Paramètres de téléchargement"
+              />
             </div>
           </div>
         </section>
 
         <div class="cta-section">
-          <h2 style="margin-bottom: 1.5rem">Prêt à essayer ?</h2>
+          <h2 style="margin-bottom: 1.5rem">Envie de découvrir le projet ?</h2>
           <p style="color: var(--text-muted); margin-bottom: 2rem">
-            Découvrez le code source et testez l'application par vous-même.
+            Découvrez le code source et testez l'application par vous-même. </br>
+            (Pour pouvoir tester l'application envoyez moi un mail)
           </p>
           <a
             href="https://github.com/Steelmy/SyncDrive"
@@ -269,5 +186,41 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal Lightbox -->
+    <div class="modal-overlay" id="imageModal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <img id="modalImage" src="" alt="" />
+    </div>
+
+    <script>
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const modalClose = document.getElementById("modalClose");
+
+      document
+        .querySelectorAll(".screenshot-placeholder img")
+        .forEach((img) => {
+          img.addEventListener("click", () => {
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modal.classList.add("active");
+            document.body.style.overflow = "hidden";
+          });
+        });
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      modalClose.addEventListener("click", closeModal);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
   </body>
 </html>
