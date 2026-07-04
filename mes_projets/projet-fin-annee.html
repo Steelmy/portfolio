@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion de Prêts de Matériel - Mes Projets</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <a
+        href="../index.html"
+        class="btn"
+        style="
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.9em;
+          padding: 0.5rem 1rem;
+          margin-bottom: 2rem;
+        "
+      >
+        ← Retour
+      </a>
+
+      <div class="project-container">
+        <header class="project-header">
+          <div class="bolt-badge">🎓 Projet de Fin d'Année</div>
+          <h1>Gestion de Prêts de Matériel</h1>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 1.2rem;
+              max-width: 900px;
+              margin: 0 auto;
+            "
+          >
+            Une application web complète développée pour le lycée Marcel Sembat
+            (BTS CIEL IR 2026), permettant de gérer efficacement les entrées et
+            sorties d'équipements pour le laboratoire. L'application identifie
+            le matériel via des codes-barres et les emprunteurs via leur carte
+            d'accès à l'établissement.
+          </p>
+        </header>
+
+        <section class="project-intro">
+          <div class="project-description">
+            <h2>L'Histoire du Projet</h2>
+            <p
+              style="
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+                color: var(--text-muted);
+              "
+            >
+              Ce projet a été réalisé en équipe pour répondre au besoin de
+              l'assistante de laboratoire. Mon rôle s'est concentré sur la
+              <strong>gestion du matériel</strong> : création de l'IHM dédiée,
+              mise en place de l'identification par codes-barres et conception
+              de la base de données de test.
+            </p>
+            <p style="line-height: 1.6; color: var(--text-muted)">
+              <strong>Pourquoi une application web ?</strong><br />
+              Nous avons choisi les technologies web pour bénéficier d'une
+              meilleure qualité de rendu et de la facilité d'hébergement local
+              (LAMP).
+            </p>
+          </div>
+          <div class="carre-contenu" style="padding: 2rem; border-radius: 1rem">
+            <h3 style="color: var(--accent); margin-bottom: 1rem">
+              Technologies Utilisées
+            </h3>
+            <ul style="color: var(--text-muted)">
+              <li>HTML / CSS / JavaScript vanilla</li>
+              <li>Tailwind CSS (Design responsive & UI)</li>
+              <li>PHP vanilla (Backend MVC, API RESTful)</li>
+              <li>Base de données MariaDB (PDO, requêtes préparées)</li>
+              <li>FPDF (Génération de PDF)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2
+            style="
+              text-align: center;
+              margin-bottom: 3rem;
+              font-size: 2.5rem;
+              padding-right: 25px;
+            "
+          >
+            Fonctionnalités Clés
+          </h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3>📦 Gestion du Matériel</h3>
+              <p>
+                Ajout et suppression de matériel avec création dynamique d'une
+                arborescence de références.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>🔍 Identification Codes-barres</h3>
+              <p>
+                Génération automatique et impression de codes-barres (EAN-13),
+                permettant une recherche et un suivi instantanés via une
+                scannette.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>📄 Exportation PDF Dynamique</h3>
+              <p>
+                Génération côté serveur de l'inventaire au format PDF avec
+                algorithme de redimensionnement proportionnel des colonnes.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>⚡ Architecture MVC & API</h3>
+              <p>
+                Séparation claire des responsabilités, interactions asynchrones
+                fluides sans rechargement de page et sécurité renforcée
+                (sessions PHP, PDO).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2
+            style="
+              text-align: center;
+              margin-bottom: 3rem;
+              font-size: 2.5rem;
+              padding-right: 25px;
+            "
+          >
+            Aperçu de l'Application
+          </h2>
+          <div class="gallery-grid">
+            <div class="screenshot-placeholder">
+              <img
+                src="../img/Screen-projet/Inventaire.png"
+                alt="Tableau de bord de l'inventaire"
+              />
+            </div>
+            <div class="screenshot-placeholder">
+              <img
+                src="../img/Screen-projet/References.png"
+                alt="Gestion des références du catalogue"
+              />
+            </div>
+            <div class="screenshot-placeholder">
+              <img
+                src="../img/Screen-projet/Impression-de-codes-barres.png"
+                alt="Impression de codes barres"
+              />
+            </div>
+          </div>
+        </section>
+
+        <div class="cta-section">
+          <h2 style="margin-bottom: 1.5rem">Envie de découvrir le projet ?</h2>
+          <p style="color: var(--text-muted); margin-bottom: 2rem">
+            Découvrez le code source et testez l'application par vous-même. </br>
+          </p>
+          <a
+            href="https://github.com/Steelmy/Projet_De_Fin_d_annee_BTS_Partie_Materiel"
+            target="_blank"
+            class="btn"
+            style="text-decoration: none; font-size: 1.2rem; padding: 1rem 3rem"
+          >
+            <span style="margin-right: 10px">⚡</span> Tester sur GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Lightbox -->
+    <div class="modal-overlay" id="imageModal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <img id="modalImage" src="" alt="" />
+    </div>
+
+    <script>
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const modalClose = document.getElementById("modalClose");
+
+      document
+        .querySelectorAll(".screenshot-placeholder img")
+        .forEach((img) => {
+          img.addEventListener("click", () => {
+            if (img.src) {
+              modalImg.src = img.src;
+              modalImg.alt = img.alt;
+              modal.classList.add("active");
+              document.body.style.overflow = "hidden";
+            }
+          });
+        });
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      modalClose.addEventListener("click", closeModal);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+  </body>
+</html>
