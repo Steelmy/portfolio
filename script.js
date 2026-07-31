@@ -42,28 +42,30 @@ let dropdownOpen = false;
 
 function openDropdown() {
   dropdownOpen = true;
-  dropdownMenu.classList.add("dropdown-open");
-  chevronIcon.classList.add("rotate-180");
+  if(dropdownMenu) dropdownMenu.classList.add("dropdown-open");
+  if(chevronIcon) chevronIcon.classList.add("rotate-180");
 }
 
 function closeDropdown() {
   dropdownOpen = false;
-  dropdownMenu.classList.remove("dropdown-open");
-  chevronIcon.classList.remove("rotate-180");
+  if(dropdownMenu) dropdownMenu.classList.remove("dropdown-open");
+  if(chevronIcon) chevronIcon.classList.remove("rotate-180");
 }
 
-dropdownTrigger.addEventListener("click", (e) => {
-  e.stopPropagation();
-  if (dropdownOpen) {
-    closeDropdown();
-  } else {
-    openDropdown();
-  }
-});
+if (dropdownTrigger) {
+  dropdownTrigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (dropdownOpen) {
+      closeDropdown();
+    } else {
+      openDropdown();
+    }
+  });
+}
 
 // Close dropdown when clicking outside
 document.addEventListener("click", (e) => {
-  if (!dropdownContainer.contains(e.target)) {
+  if (dropdownContainer && !dropdownContainer.contains(e.target)) {
     closeDropdown();
   }
 });
@@ -80,17 +82,19 @@ const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 let mobileMenuOpen = false;
 
-mobileMenuBtn.addEventListener("click", () => {
-  mobileMenuOpen = !mobileMenuOpen;
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileMenuOpen = !mobileMenuOpen;
 
-  if (mobileMenuOpen) {
-    mobileMenu.classList.add("mobile-open");
-    mobileMenuBtn.classList.add("mobile-active");
-  } else {
-    mobileMenu.classList.remove("mobile-open");
-    mobileMenuBtn.classList.remove("mobile-active");
-  }
-});
+    if (mobileMenuOpen) {
+      if(mobileMenu) mobileMenu.classList.add("mobile-open");
+      mobileMenuBtn.classList.add("mobile-active");
+    } else {
+      if(mobileMenu) mobileMenu.classList.remove("mobile-open");
+      mobileMenuBtn.classList.remove("mobile-active");
+    }
+  });
+}
 
 // Close mobile menu when a link is clicked
 document.querySelectorAll("#mobile-menu .mobile-nav-link").forEach((link) => {
@@ -114,7 +118,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     e.preventDefault();
 
-    const navbarHeight = document.getElementById("navbar").offsetHeight;
+    const navbar = document.getElementById("navbar");
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
     const targetPosition =
       targetElement.getBoundingClientRect().top +
       window.pageYOffset -
@@ -140,5 +145,84 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
 
     requestAnimationFrame(animation);
+  });
+});
+
+// ===========================
+// GSAP Custom Cursor
+// ===========================
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+if (cursor && cursorFollower) {
+  let mouseX = 0;
+  let mouseY = 0;
+  let followerX = 0;
+  let followerY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Immediate cursor update
+    gsap.to(cursor, {
+      x: mouseX,
+      y: mouseY,
+      duration: 0.1,
+      ease: "power2.out"
+    });
+  });
+
+  // Follower delay
+  gsap.ticker.add(() => {
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    
+    gsap.set(cursorFollower, {
+      x: followerX,
+      y: followerY
+    });
+  });
+
+  // Cursor Hover Effects
+  const hoverElements = document.querySelectorAll('a, button, .dropdown-item, .nav-link, .screenshot-placeholder, .modal-close');
+  
+  hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorFollower.classList.add('cursor-hover');
+      cursor.classList.add('cursor-hover-dot');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursorFollower.classList.remove('cursor-hover');
+      cursor.classList.remove('cursor-hover-dot');
+    });
+  });
+}
+
+// ===========================
+// Magnetic Elements
+// ===========================
+const magneticElements = document.querySelectorAll('.btn, .Btn, #dropdown-trigger');
+magneticElements.forEach(el => {
+  el.addEventListener('mousemove', (e) => {
+    const position = el.getBoundingClientRect();
+    const x = e.clientX - position.left - position.width / 2;
+    const y = e.clientY - position.top - position.height / 2;
+    
+    gsap.to(el, {
+      x: x * 0.3,
+      y: y * 0.3,
+      duration: 0.5,
+      ease: "power2.out"
+    });
+  });
+  
+  el.addEventListener('mouseleave', () => {
+    gsap.to(el, {
+      x: 0,
+      y: 0,
+      duration: 0.5,
+      ease: "elastic.out(1, 0.3)"
+    });
   });
 });

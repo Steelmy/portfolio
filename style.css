@@ -301,7 +301,6 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--dark-surface);
 }
 
 h1 {
@@ -807,26 +806,46 @@ footer {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   cursor: default;
 }
-.modal-close {
+.modal-close, .modal-prev, .modal-next {
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
-  font-size: 1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s ease;
   z-index: 10000;
+  border-radius: 50%;
+  line-height: 0;
+  padding-bottom: 3px;
 }
-.modal-close:hover {
+.modal-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.modal-prev, .modal-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+}
+.modal-prev {
+  left: 2rem;
+}
+.modal-next {
+  right: 2rem;
+}
+.modal-close:hover, .modal-prev:hover, .modal-next:hover {
   background: rgba(255, 255, 255, 0.25);
+}
+@media (max-width: 768px) {
+  .modal-prev { left: 0.5rem; width: 2.5rem; height: 2.5rem; }
+  .modal-next { right: 0.5rem; width: 2.5rem; height: 2.5rem; }
 }
 .cta-section {
   text-align: center;
@@ -944,4 +963,112 @@ footer {
   .CV h1 {
     font-size: 2em;
   }
+}
+
+/* ================================
+   Custom Cursor & Effects
+   ================================ */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent-light);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.cursor-hover {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-bg-subtle);
+  border-color: transparent;
+}
+
+.cursor-hover-dot {
+  background-color: #ffffff;
+  width: 12px;
+  height: 12px;
+}
+
+@media (pointer: coarse), (hover: none) {
+  .cursor, .cursor-follower {
+    display: none !important;
+  }
+}
+
+/* Background Orbs */
+.bg-orbs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  animation: float 20s infinite ease-in-out alternate;
+}
+
+.orb-1 {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: var(--accent-dim);
+}
+
+.orb-2 {
+  bottom: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: var(--accent);
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(10%, 10%) scale(1.1);
+  }
+}
+
+/* GSAP classes */
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(30px);
 }
