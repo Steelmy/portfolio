@@ -840,10 +840,20 @@ footer {
 .modal-next {
   right: 2rem;
 }
-.modal-close:hover, .modal-prev:hover, .modal-next:hover {
+@media (hover: hover) {
+  .modal-close:hover, .modal-prev:hover, .modal-next:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+.modal-close:active, .modal-prev:active, .modal-next:active {
   background: rgba(255, 255, 255, 0.25);
 }
 @media (max-width: 768px) {
+  .modal-prev, .modal-next, .modal-close {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
   .modal-prev { left: 0.5rem; width: 2.5rem; height: 2.5rem; }
   .modal-next { right: 0.5rem; width: 2.5rem; height: 2.5rem; }
 }
