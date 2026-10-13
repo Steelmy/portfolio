@@ -857,12 +857,38 @@ footer {
   .modal-prev { left: 0.5rem; width: 2.5rem; height: 2.5rem; }
   .modal-next { right: 0.5rem; width: 2.5rem; height: 2.5rem; }
 }
+/* Modal Test de l'application */
+.test-modal-box {
+  max-width: 560px;
+  width: calc(100% - 2rem);
+  padding: 2.5rem 2rem;
+  background: var(--dark-card);
+  border: 1px solid var(--accent-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  cursor: default;
+}
+.test-modal-box h2 {
+  margin-bottom: 1rem;
+}
+.test-modal-box p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.test-modal-box .btn {
+  text-decoration: none;
+}
 .cta-section {
   text-align: center;
   padding: 4rem 0;
   background: var(--dark-card);
   border-radius: 2rem;
   margin-top: 4rem;
+}
+.cta-test {
+  margin-top: 1.5rem;
 }
 .main-wrapper {
   width: 100%;
