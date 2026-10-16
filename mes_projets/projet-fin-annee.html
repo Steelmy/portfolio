@@ -72,7 +72,7 @@
             >
               Ce projet a été réalisé en équipe pour répondre au besoin de
               l'assistante de laboratoire. Mon rôle s'est concentré sur la
-              <strong>gestion du matériel</strong> : création de l'IHM dédiée,
+              gestion du matériel : création de l'IHM dédiée,
               mise en place de l'identification par codes-barres et conception
               de la base de données de test.
             </p>
@@ -189,32 +189,17 @@
             <span style="margin-right: 10px">⚡</span> Découvrir sur GitHub
           </a>
           <div class="cta-test">
-            <button class="btn" id="testOpen" type="button">
+            <a
+              href="https://liam.projetgestiondumateriel.fr"
+              target="_blank"
+              rel="noopener"
+              class="btn"
+              style="text-decoration: none"
+            >
               Envie de tester l'application ? Cliquez ici
-            </button>
+            </a>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Modal Test de l'application -->
-    <div class="modal-overlay" id="testModal">
-      <button class="modal-close" id="testClose">✕</button>
-      <div
-        class="test-modal-box"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="testModalTitle"
-      >
-        <h2 id="testModalTitle">Avant de continuer</h2>
-        <p>
-          Cette application n'a pas été conçue pour les mobiles : elle est
-          utilisable uniquement sur ordinateur.
-        </p>
-        <!-- TODO : remplacer href="#" par le lien de la page de test -->
-        <a href="https://liam.projetgestiondumateriel.fr" target="_blank" rel="noopener" class="btn">
-          Poursuivre vers le test de l'application
-        </a>
       </div>
     </div>
 
@@ -290,27 +275,6 @@
           currentIndex++;
           updateModal();
         }
-      });
-
-      const testModal = document.getElementById("testModal");
-      const testOpen = document.getElementById("testOpen");
-      const testClose = document.getElementById("testClose");
-
-      function closeTestModal() {
-        testModal.classList.remove("active");
-        document.body.style.overflow = "";
-      }
-
-      testOpen.addEventListener("click", () => {
-        testModal.classList.add("active");
-        document.body.style.overflow = "hidden";
-      });
-      testModal.addEventListener("click", (e) => {
-        if (e.target === testModal) closeTestModal();
-      });
-      testClose.addEventListener("click", closeTestModal);
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeTestModal();
       });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
